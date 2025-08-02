@@ -58,7 +58,7 @@ const handleRegister = async () => {
     <el-button class="form-button" type="primary" @click="handleRegister">
       注册
     </el-button>
-    <el-button class="form-button" type="text" @click="() => router.push('/login')">
+    <el-button class="text-style" @click="() => router.push('/login')">
       已有账号？前往登录
     </el-button>
   </div>
@@ -94,5 +94,22 @@ const handleRegister = async () => {
 .form-button {
   width: 80%;
   margin-top: 0.5rem;
+}
+
+.text-style {
+  width: 80%;
+  margin-top: 0.5rem;
+  margin-left: 0;
+  background: none;
+  border: none;
+  color: #409EFF;
+  padding: 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.text-style:hover {
+  text-decoration: underline;
+  background-color: transparent;
 }
 </style>

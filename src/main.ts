@@ -7,9 +7,15 @@ import 'element-plus/dist/index.css'
 import * as ElementPlusIconVue from '@element-plus/icons-vue'
 
 const app = createApp(App)
-for(const [key,component]of Object.entries(ElementPlusIconVue)){
-    app.component(key,component)
+for (const [key, component] of Object.entries(ElementPlusIconVue)) {
+    app.component(key, component)
 }
+app.config.warnHandler = (msg, _instance, trace) => {
+    if (msg.includes('type.text is about to be deprecated')) {
+        return;
+    }
+    console.warn(msg + trace);
+};
 
 app.use(router)
 app.use(ElementPlus)

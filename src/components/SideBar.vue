@@ -28,6 +28,9 @@ const handleLogout = () => {
   router.push('/login')
   console.log("退出登录")
 }
+const openGithub = () => {
+  window.open("https://github.com/anApalpitate")
+}
 </script>
 
 <template>
@@ -56,7 +59,7 @@ const handleLogout = () => {
         </el-icon>
         退出登录
       </el-button>
-      <el-button class="github-btn">
+      <el-button class="github-btn" @click="openGithub">
         <img alt="GitHub" class="icon-img" src="/github.png?url"/>
         Github
       </el-button>
@@ -94,7 +97,7 @@ const handleLogout = () => {
 }
 
 .el-menu-item {
-  --el-menu-item-height: 2rem;
+  --el-menu-item-height: 2.5rem;
   border-radius: 0.25rem;
   padding: 0 12px;
   --el-menu-base-level-padding: 1rem;

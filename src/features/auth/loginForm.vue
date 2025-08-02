@@ -17,8 +17,9 @@ const handleLogin = async () => {
   try {
     const response = await login(username.value, password.value)
     const token = response.data.access_token
-
     localStorage.setItem('token', token)
+    localStorage.setItem('role', token)
+
     if (rememberMe.value) {
       localStorage.setItem('rememberedUsername', username.value)
       localStorage.setItem('rememberedPassword', password.value)
@@ -79,7 +80,7 @@ onMounted(() => {
     <el-button class="form-button" type="primary" @click="handleLogin">
       登录
     </el-button>
-    <el-button class="form-button" type="text" @click="() => router.push('/register')">
+    <el-button class="text-style" @click="() => router.push('/register')">
       没有账号？前往注册
     </el-button>
   </div>
@@ -114,6 +115,24 @@ onMounted(() => {
 .form-button {
   width: 80%;
   margin-top: 0.5rem;
+
+}
+
+.text-style {
+  width: 80%;
+  margin-top: 0.5rem;
+  margin-left: 0;
+  background: none;
+  border: none;
+  color: #409EFF;
+  padding: 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.text-style:hover {
+  text-decoration: underline;
+  background-color: transparent;
 }
 
 .remember-checkbox {

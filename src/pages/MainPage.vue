@@ -1,4 +1,4 @@
-<script setup lang="ts" name="HomePage">
+<script lang="ts" name="HomePage" setup>
 
 import HeaderBar from "@/components/HeaderBar.vue";
 import SideBar from "@/components/SideBar.vue";
@@ -28,13 +28,16 @@ import SideBar from "@/components/SideBar.vue";
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-color:var(--bg-white);
+  background-color: var(--bg-white);
 }
 
 .main-content {
   flex: 1;
   overflow-y: auto;
   background-color: var(--bg-white);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 </style>

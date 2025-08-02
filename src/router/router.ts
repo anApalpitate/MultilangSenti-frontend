@@ -17,17 +17,20 @@ const multiLangSenti_routes = [
 const routes = [
     {
         path: '/multiLangSenti',
+        name: 'MultiLangSenti',
         component: MainPage,
         meta: {requiresAuth: true},
         children: multiLangSenti_routes
     },
     {
         path: '/login',
+        name: 'Login',
         component: AuthPage,
         props: {mode: 'login'}
     },
     {
         path: '/register',
+        name: 'Register',
         component: AuthPage,
         props: {mode: 'register'}
     },
@@ -45,8 +48,6 @@ const router = createRouter({
 // 路由守卫: 登录验证
 router.beforeEach((to, _from, next) => {
     const token = localStorage.getItem('token')
-    console.log("当前token:", token)
-
     if (to.meta.requiresAuth && !token) {
         next('/login');
     } else if ((to.path === '/login' || to.path === '/register') && token) {

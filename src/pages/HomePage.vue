@@ -1,9 +1,9 @@
 <script lang="ts" name="HomePage" setup>
-
 </script>
 
 <template>
-  <div>主页</div>
+  <el-container>
+  </el-container>
 </template>
 
 <style scoped>
